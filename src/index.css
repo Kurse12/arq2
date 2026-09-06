@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+/* Bodoni Moda — display serif, headlines only */
+@import '@fontsource/bodoni-moda/latin-500.css';
+@import '@fontsource/bodoni-moda/latin-500-italic.css';
+@import '@fontsource/bodoni-moda/latin-600.css';
+
+/* Archivo — nav, labels, body, tracked-out caps */
+@import '@fontsource/archivo/latin-400.css';
+@import '@fontsource/archivo/latin-500.css';
+@import '@fontsource/archivo/latin-600.css';
+
+@theme {
+  --font-display: 'Bodoni Moda', ui-serif, Georgia, serif;
+  --font-sans: 'Archivo', system-ui, sans-serif;
+
+  --color-ink: #0b0a08;
+  --color-ink-2: #121110;
+  --color-ink-3: #1a1815;
+  --color-bone: #efe8d8;
+  --color-bone-dim: #cdc6b6;
+  --color-mist: #a49c8d;
+  --color-hair: rgb(255 255 255 / 12%);
+
+  --breakpoint-xs: 480px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hair);
+  }
+
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-bone);
+    color: var(--color-ink);
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .lenis {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+}
