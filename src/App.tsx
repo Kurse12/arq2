@@ -1,14 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { SmoothScrollProvider } from './lib/smoothScroll';
 import { Nav } from './components/Nav';
 import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
 import { ProjectsGallery } from './components/ProjectsGallery';
-import { Studio } from './components/Studio';
-import { Approach } from './components/Approach';
-import { FeaturedProject } from './components/FeaturedProject';
-import { Quote } from './components/Quote';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+
+const Studio = lazy(() => import('./components/Studio').then((m) => ({ default: m.Studio })));
+const Approach = lazy(() =>
+  import('./components/Approach').then((m) => ({ default: m.Approach })),
+);
+const FeaturedProject = lazy(() =>
+  import('./components/FeaturedProject').then((m) => ({ default: m.FeaturedProject })),
+);
+const Quote = lazy(() => import('./components/Quote').then((m) => ({ default: m.Quote })));
+const Contact = lazy(() => import('./components/Contact').then((m) => ({ default: m.Contact })));
+const Footer = lazy(() => import('./components/Footer').then((m) => ({ default: m.Footer })));
 
 function App() {
   return (
@@ -18,13 +24,17 @@ function App() {
         <Hero />
         <Manifesto />
         <ProjectsGallery />
-        <Studio />
-        <Approach />
-        <FeaturedProject />
-        <Quote />
-        <Contact />
+        <Suspense fallback={null}>
+          <Studio />
+          <Approach />
+          <FeaturedProject />
+          <Quote />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </SmoothScrollProvider>
   );
 }

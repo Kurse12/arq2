@@ -35,8 +35,8 @@ export function Contact() {
     <section id="contacto" ref={sectionRef} className="relative isolate overflow-hidden bg-ink">
       <div ref={imgRef} className="absolute inset-0 -top-[10%] -z-10 h-[120%] will-change-transform">
         <img
-          src={images.contactInterior(1800)}
-          srcSet={`${images.contactInterior(900)} 900w, ${images.contactInterior(1400)} 1400w, ${images.contactInterior(2000)} 2000w`}
+          src={images.contactInterior(1280)}
+          srcSet={`${images.contactInterior(640)} 640w, ${images.contactInterior(960)} 960w, ${images.contactInterior(1280)} 1280w, ${images.contactInterior(1672)} 1672w`}
           sizes="100vw"
           alt="Dormitorio principal con vista al jardín a través de puertas vidriadas"
           loading="lazy"

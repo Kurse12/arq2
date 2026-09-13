@@ -47,8 +47,8 @@ export function Hero() {
     >
       <div ref={imgRef} className="absolute inset-0 -z-10 will-change-transform">
         <img
-          src={images.heroExterior(2000)}
-          srcSet={`${images.heroExterior(1000)} 1000w, ${images.heroExterior(1600)} 1600w, ${images.heroExterior(2400)} 2400w`}
+          src={images.heroExterior(1280)}
+          srcSet={`${images.heroExterior(640)} 640w, ${images.heroExterior(960)} 960w, ${images.heroExterior(1280)} 1280w, ${images.heroExterior(1672)} 1672w`}
           sizes="100vw"
           alt="Vivienda contemporánea al atardecer, hormigón y vidrio integrados al paisaje"
           className="h-full w-full scale-105 object-cover"

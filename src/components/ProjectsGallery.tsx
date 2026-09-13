@@ -81,11 +81,11 @@ export function ProjectsGallery() {
             className={`relative isolate h-[100dvh] shrink-0 ${reduce ? 'w-full snap-start' : 'w-screen'}`}
           >
             <img
-              src={project.image(1800)}
-              srcSet={`${project.image(900)} 900w, ${project.image(1400)} 1400w, ${project.image(2000)} 2000w`}
+              src={project.image(1280)}
+              srcSet={`${project.image(640)} 640w, ${project.image(960)} 960w, ${project.image(1280)} 1280w, ${project.image(1672)} 1672w`}
               sizes="100vw"
               alt={`${project.name}, ${project.type} en ${project.location}`}
-              loading="eager"
+              loading={project.index === '01' ? 'eager' : 'lazy'}
               fetchPriority={project.index === '01' ? 'high' : undefined}
               className="h-full w-full object-cover"
             />

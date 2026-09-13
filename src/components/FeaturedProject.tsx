@@ -38,8 +38,8 @@ export function FeaturedProject() {
     <section ref={sectionRef} className="relative isolate h-[100dvh] overflow-hidden bg-ink">
       <img
         ref={imgRef}
-        src={images.featuredInterior(2000)}
-        srcSet={`${images.featuredInterior(1000)} 1000w, ${images.featuredInterior(1600)} 1600w, ${images.featuredInterior(2400)} 2400w`}
+        src={images.featuredInterior(1280)}
+        srcSet={`${images.featuredInterior(640)} 640w, ${images.featuredInterior(960)} 960w, ${images.featuredInterior(1280)} 1280w, ${images.featuredInterior(1672)} 1672w`}
         sizes="100vw"
         alt="Interior de Casa Horizonte, living con muro de hormigón y vidrio hacia el jardín"
         loading="lazy"

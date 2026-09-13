@@ -83,8 +83,8 @@ export function Studio() {
         <div className="relative isolate min-h-[420px] overflow-hidden md:min-h-0">
           <div ref={imgRef} className="absolute inset-0 -top-[8%] h-[116%] will-change-transform">
             <img
-              src={images.studioInterior(1400)}
-              srcSet={`${images.studioInterior(800)} 800w, ${images.studioInterior(1400)} 1400w, ${images.studioInterior(2000)} 2000w`}
+              src={images.studioInterior(1280)}
+              srcSet={`${images.studioInterior(640)} 640w, ${images.studioInterior(960)} 960w, ${images.studioInterior(1280)} 1280w, ${images.studioInterior(1672)} 1672w`}
               sizes="(min-width: 768px) 50vw, 100vw"
               alt="Interior de living con estructura de madera vista y muro de vidrio hacia el jardín"
               loading="lazy"
