@@ -69,18 +69,20 @@ export function Hero() {
         </motion.p>
 
         <h1 className="font-display max-w-3xl text-[2.75rem] leading-[1.05] text-bone sm:text-6xl lg:text-7xl">
+          {/* Headline is the LCP element: slide only, never start at opacity 0,
+              or Chrome postpones LCP until the fade finishes. */}
           <motion.span
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+            initial={reduce ? false : { y: 24 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.9, ease: EASE }}
             className="block"
           >
             Espacios para
           </motion.span>
           <motion.span
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.22 }}
+            initial={reduce ? false : { y: 24 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 0.08 }}
             className="block pb-1 italic leading-[1.1]"
           >
             habitar distinto.

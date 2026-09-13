@@ -20,7 +20,10 @@ const run = async () => {
     for (const width of WIDTHS) {
       if (!meta.width || width >= meta.width) continue;
       const output = path.join(DIR, `${base}-${width}.webp`);
-      await sharp(input).resize({ width }).webp({ quality: 78 }).toFile(output);
+      await sharp(input)
+        .resize({ width })
+        .webp({ quality: 62, effort: 6, smartSubsample: true })
+        .toFile(output);
       console.log(`generated ${base}-${width}.webp`);
     }
   }

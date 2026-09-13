@@ -85,8 +85,8 @@ export function ProjectsGallery() {
               srcSet={`${project.image(640)} 640w, ${project.image(960)} 960w, ${project.image(1280)} 1280w, ${project.image(1672)} 1672w`}
               sizes="100vw"
               alt={`${project.name}, ${project.type} en ${project.location}`}
-              loading={project.index === '01' ? 'eager' : 'lazy'}
-              fetchPriority={project.index === '01' ? 'high' : undefined}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />

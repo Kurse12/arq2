@@ -10,6 +10,15 @@
       content="Estudio de arquitectura contemporánea. Diseñamos espacios que conectan con tu forma de vivir."
     />
     <title>Estudio / Arquitectura</title>
+    <!-- Hero image is only discovered after JS runs; preload it so it downloads in parallel. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/img/hero-1280.webp"
+      imagesrcset="/img/hero-640.webp 640w, /img/hero-960.webp 960w, /img/hero-1280.webp 1280w, /img/hero.webp 1672w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
   </head>
   <body>
     <div id="root"></div>
